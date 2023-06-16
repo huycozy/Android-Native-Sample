@@ -65,6 +65,9 @@ class FirstFragment : Fragment() {
                     // eg: /storage/emulated/0/Download/
                     val path = File(outdir.absolutePath,"index.html").absoluteFile
                     Log.d("TAG", "is existed: ${path.exists()}")
+
+                    binding.webview.settings.allowContentAccess = true
+                    binding.webview.settings.allowFileAccess = true
                     this.binding.webview.loadUrl("file://$path")
 
                 }
